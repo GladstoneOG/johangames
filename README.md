@@ -4,18 +4,15 @@ A zero-build, Swiss Print × Futuristic-Industrial (Arknights: Endfield–inspir
 
 ## Live Games
 
-1. **CTR 1999** — https://ctrweb.johansans999.workers.dev/
-2. **GTA III** — https://gta3web.johansans999.workers.dev/
-3. **Pokémon Emerald** — https://emeraldweb.johansans999.workers.dev/
-4. **Metal Slug 1–3** — https://metalslugweb.johansans999.workers.dev/
-5. **Brotato** — https://brotatoweb.johansans999.workers.dev/
-6. **Tetris** — https://tetrisweb.johansans999.workers.dev/
-7. **NFS Underground 2** — https://nfsu2web.johansans999.workers.dev/
-8. **Mario Party 3 (N64)** — https://marioparty3web.johansans999.workers.dev/
-
-## Under Construction (Staged)
-
-9. **Capsa** — https://capsaweb.johansans999.workers.dev/
+1. **Capsa** — https://capsaweb.johansans999.workers.dev/
+2. **CTR 1999** — https://ctrweb.johansans999.workers.dev/
+3. **GTA III** — https://gta3web.johansans999.workers.dev/
+4. **Pokémon Emerald** — https://emeraldweb.johansans999.workers.dev/
+5. **Metal Slug 1–3** — https://metalslugweb.johansans999.workers.dev/
+6. **Brotato** — https://brotatoweb.johansans999.workers.dev/
+7. **Tetris** — https://tetrisweb.johansans999.workers.dev/
+8. **NFS Underground 2** — https://nfsu2web.johansans999.workers.dev/
+9. **Mario Party 3 (N64)** — https://marioparty3web.johansans999.workers.dev/
 10. **Monopoly** — https://capsaweb.johansans999.workers.dev/
 
 ## Files

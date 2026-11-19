@@ -547,6 +547,10 @@ a:focus-visible,
    ============================================================================ */
 
 .game-card {
+  --game-primary: var(--yellow);
+  --game-secondary: var(--ink);
+  --game-ink: var(--ink);
+  --game-tint: rgba(255, 230, 0, 0.08);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -555,7 +559,7 @@ a:focus-visible,
   cursor: pointer;
   transition: transform 160ms cubic-bezier(0.22, 1, 0.36, 1),
               box-shadow 160ms cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 140ms ease;
+              border-color 180ms ease;
   overflow: hidden;
   animation: cardReveal 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -585,7 +589,11 @@ a:focus-visible,
 
 .game-card:hover {
   transform: translateY(-2px);
-  box-shadow: 6px 6px 0 0 rgba(17, 18, 20, 0.11);
+  box-shadow: 6px 6px 0 0 rgba(17, 18, 20, 0.14);
+}
+
+.game-card:hover::before {
+  background: var(--game-primary);
 }
 
 .game-card.is-selected {
@@ -594,7 +602,7 @@ a:focus-visible,
 }
 
 .game-card.is-selected::before {
-  background: var(--yellow);
+  background: var(--game-primary);
 }
 
 /* Top Serial & Status Bar */
@@ -629,9 +637,10 @@ a:focus-visible,
   transition: background-color 140ms ease, color 140ms ease;
 }
 
+.game-card:hover .card-serial,
 .game-card.is-selected .card-serial {
-  background: var(--yellow);
-  color: var(--ink);
+  background: var(--game-primary);
+  color: var(--game-ink);
 }
 
 .card-code {
@@ -670,12 +679,24 @@ a:focus-visible,
   width: 100%;
   height: 100%;
   display: block;
-  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+              filter 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Cards stay crisp semi-monochrome at rest and bloom into full color on hover/selection */
+.game-card .schematic-svg {
+  filter: grayscale(100%) contrast(1.06) brightness(1.01);
 }
 
 .game-card:hover .schematic-svg,
 .game-card.is-selected .schematic-svg {
+  filter: grayscale(0%) contrast(1) brightness(1);
   transform: scale(1.03);
+}
+
+/* Spec Inspector window always renders in vivid full color */
+.inspector-schematic-wrap .schematic-svg {
+  filter: none;
 }
 
 /* Corner registration brackets inside schematic */
@@ -687,11 +708,13 @@ a:focus-visible,
   border-style: solid;
   pointer-events: none;
   opacity: 0.4;
-  transition: opacity 140ms ease;
+  transition: opacity 180ms ease, border-color 180ms ease;
 }
 
+.game-card:hover .corner-tick,
 .game-card.is-selected .corner-tick {
   opacity: 1;
+  border-color: var(--game-primary);
 }
 
 .corner-tick.tl { top: 6px; left: 6px; border-width: 1.5px 0 0 1.5px; }
@@ -761,9 +784,18 @@ a:focus-visible,
 }
 
 .spec-tag.tag-accent {
-  background: var(--yellow);
-  border-color: var(--ink);
+  background: var(--bg-inset);
+  border-color: var(--line-strong);
+  color: var(--ink);
   font-weight: 700;
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+.game-card:hover .spec-tag.tag-accent,
+.game-card.is-selected .spec-tag.tag-accent {
+  background: var(--game-primary);
+  color: var(--game-ink);
+  border-color: var(--ink);
 }
 
 /* Card Footer Action Strip */
@@ -808,8 +840,8 @@ a:focus-visible,
 }
 
 .card-launch-link:hover {
-  background: var(--yellow);
-  color: var(--ink);
+  background: var(--game-primary);
+  color: var(--game-ink);
 }
 
 .card-launch-link.is-locked {
@@ -893,9 +925,13 @@ a:focus-visible,
 }
 
 .inspector-panel {
+  --game-primary: var(--yellow);
+  --game-secondary: var(--ink);
+  --game-ink: var(--ink);
+  --game-tint: rgba(255, 230, 0, 0.08);
   background: var(--bg-surface);
   border: 1.5px solid var(--line-strong);
-  box-shadow: 8px 8px 0 0 rgba(17, 18, 20, 0.08);
+  box-shadow: 8px 8px 0 0 rgba(17, 18, 20, 0.10);
   overflow-x: hidden;
   overflow-y: auto;
   max-height: calc(100vh - var(--rail-height) - 32px);
@@ -919,6 +955,7 @@ a:focus-visible,
   padding: 10px 16px;
   background: var(--ink);
   color: var(--bg-surface);
+  border-bottom: 3px solid var(--game-primary);
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 600;
@@ -927,8 +964,12 @@ a:focus-visible,
 }
 
 .inspector-topbar-unit {
-  color: var(--yellow);
-  font-weight: 700;
+  display: inline-block;
+  padding: 2px 7px;
+  margin-left: 4px;
+  background: var(--game-primary);
+  color: var(--game-ink);
+  font-weight: 800;
 }
 
 .inspector-close-btn {
@@ -981,9 +1022,9 @@ a:focus-visible,
 }
 
 .inspector-mode-pill {
-  padding: 3px 8px;
-  background: var(--yellow);
-  color: var(--ink);
+  padding: 3px 9px;
+  background: var(--game-primary);
+  color: var(--game-ink);
   border: 1px solid var(--ink);
 }
 
@@ -1014,7 +1055,8 @@ a:focus-visible,
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   border: 1px solid var(--line);
-  background: var(--bg-paper);
+  border-left: 3px solid var(--game-primary);
+  background: linear-gradient(135deg, var(--game-tint) 0%, var(--bg-paper) 65%);
 }
 
 .spec-cell {
@@ -1099,7 +1141,7 @@ a:focus-visible,
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--ink);
+  color: var(--game-primary);
   font-weight: 700;
 }
 
@@ -1191,8 +1233,8 @@ a:focus-visible,
   justify-content: space-between;
   width: 100%;
   padding: 15px 18px;
-  background: var(--yellow);
-  color: var(--ink);
+  background: var(--game-primary);
+  color: var(--game-ink);
   border: 1.5px solid var(--ink);
   text-decoration: none;
   font-family: var(--font-display);
@@ -1202,7 +1244,7 @@ a:focus-visible,
   text-transform: uppercase;
   cursor: pointer;
   clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
-  transition: background-color 140ms ease, transform 120ms ease;
+  transition: background-color 150ms ease, color 150ms ease, transform 120ms ease;
 }
 
 .launch-cta:hover {

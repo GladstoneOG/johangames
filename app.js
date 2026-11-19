@@ -45,6 +45,24 @@
     return String(url || "").replace(/^https?:\/\//i, "").replace(/\/$/, "");
   }
 
+  function getThemeStyleAttr(game) {
+    const t = game && game.theme ? game.theme : {};
+    const primary = t.primary || "#FFE600";
+    const secondary = t.secondary || "#111214";
+    const ink = t.ink || "#111214";
+    const tint = t.tint || "rgba(255, 230, 0, 0.08)";
+    return `--game-primary:${primary};--game-secondary:${secondary};--game-ink:${ink};--game-tint:${tint};`;
+  }
+
+  function applyThemeVars(el, game) {
+    if (!el) return;
+    const t = game && game.theme ? game.theme : {};
+    el.style.setProperty("--game-primary", t.primary || "#FFE600");
+    el.style.setProperty("--game-secondary", t.secondary || "#111214");
+    el.style.setProperty("--game-ink", t.ink || "#111214");
+    el.style.setProperty("--game-tint", t.tint || "rgba(255, 230, 0, 0.08)");
+  }
+
   function isMobileViewport() {
     return window.matchMedia("(max-width: 1120px)").matches;
   }
@@ -281,7 +299,7 @@
       .map((game, idx) => {
         const isSelected = game.id === selectedId;
         const isComingSoon = game.status === "coming-soon";
-        const schematicMarkup = window.getGameSchematic ? window.getGameSchematic(game) : "";
+        const schematicMarkup = window.getGameSchematic ? window.getGameSchematic(game, "card") : "";
 
         return `
           <article
@@ -291,7 +309,7 @@
             role="button"
             aria-pressed="${isSelected ? "true" : "false"}"
             aria-label="${escapeHtml(game.title)} — ${escapeHtml(game.modeLabel)}"
-            style="animation-delay: ${Math.min(idx * 45, 280)}ms"
+            style="${getThemeStyleAttr(game)}animation-delay: ${Math.min(idx * 45, 280)}ms"
           >
             ${isComingSoon ? `<div class="hazard-bar" aria-hidden="true"></div>` : ""}
 
@@ -432,8 +450,10 @@
     if (!game) return;
 
     const isComingSoon = game.status === "coming-soon";
-    const schematicMarkup = window.getGameSchematic ? window.getGameSchematic(game) : "";
+    const schematicMarkup = window.getGameSchematic ? window.getGameSchematic(game, "inspector") : "";
     const hostDisplay = stripProtocol(game.url);
+
+    applyThemeVars(inspectorPanel, game);
 
     inspectorPanel.innerHTML = `
       <div class="inspector-topbar">

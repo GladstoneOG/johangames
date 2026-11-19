@@ -1,18 +1,18 @@
 /**
  * ============================================================================
- * ENDPORT // GAME MANIFEST (Single Source of Truth)
+ * GLADSTONEOG // GAME MANIFEST (Single Source of Truth)
  * ============================================================================
  * To add a new game later, simply append a new object to the `GAMES` array.
  *
  * Fields:
  *   id          : Unique slug (also selects custom SVG schematic if defined in schematics.js)
  *   serial      : Short index number displayed on the card ("01", "02", ...)
- *   code        : 6-char industrial classification code ("CTR-99", "GTA-03", ...)
+ *   code        : 6-char industrial classification code ("CPS-13", "CTR-99", ...)
  *   title       : Primary display title
  *   subtitle    : Short 1-line tagline
  *   url         : Live deployment URL (Cloudflare Workers / Pages / Vercel)
  *   status      : "live" | "coming-soon"
- *   category    : "versus" | "coop"  (used for filter tabs; coming-soon also appears in Coming Soon)
+ *   category    : "versus" | "coop"  (used for filter tabs)
  *   year        : Original release year string
  *   players     : Player count badge (e.g. "2–8P ONLINE")
  *   modeLabel   : Multiplayer mode label (e.g. "VERSUS // RACING", "CO-OP // SANDBOX")
@@ -21,7 +21,7 @@
  *   summary     : Technical briefing shown in the Spec Inspector
  *   highlights  : Array of 3–4 short technical bullet specs
  *   controls    : Array of { keys, action } objects rendered as tactile keycaps
- *   accent      : Optional micro-accent hex for subtle telemetry bars (defaults to #FFE600)
+ *   theme       : { primary, secondary, ink, tint } color palette revealed on hover & inspector
  * ============================================================================
  */
 
@@ -31,7 +31,7 @@ window.PORTAL_META = {
   brandIcon: "GO",
   altBrandIcon: "J9",
   subBrand: "WEB ARCHIVE",
-  version: "SYS.2.6",
+  version: "SYS.2.7",
   node: "WORKERS.DEV",
   tagline:
     "Classic & indie titles compiled to WebAssembly and engineered with zero-install browser multiplayer over WebRTC P2P & Cloudflare Durable Objects.",
@@ -39,8 +39,42 @@ window.PORTAL_META = {
 
 window.GAMES = [
   {
-    id: "ctr",
+    id: "capsa",
     serial: "01",
+    code: "CPS-13",
+    title: "CAPSA",
+    subtitle: "Big Two / Capsa Banting — 4-Player Online Card Table",
+    url: "https://capsaweb.johansans999.workers.dev/",
+    status: "live",
+    category: "versus",
+    year: "CLASSIC",
+    players: "2–4P ONLINE",
+    modeLabel: "VERSUS // CARD TABLE",
+    engine: "Native Web UI · Deterministic Deck & Combo Engine",
+    network: "Cloudflare Workers + Durable Objects Room Sync",
+    summary:
+      "Browser-native online Capsa (Big Two / Capsa Banting) tabletop engineered for fast 4-player rooms, crisp hand-sorting, automatic combo validation, and real-time turn synchronization.",
+    highlights: [
+      "Full 52-card ruleset with singles, pairs & 5-card poker combos",
+      "Real-time multiplayer lobbies & invite links over Durable Objects",
+      "Instant zero-install play with responsive tabletop controls",
+    ],
+    controls: [
+      { keys: "CLICK", action: "Select Cards" },
+      { keys: "SPACE", action: "Play Hand" },
+      { keys: "P", action: "Pass Turn" },
+      { keys: "S", action: "Sort Hand" },
+    ],
+    theme: {
+      primary: "#D92626",
+      secondary: "#059669",
+      ink: "#FFFFFF",
+      tint: "rgba(217, 38, 38, 0.08)",
+    },
+  },
+  {
+    id: "ctr",
+    serial: "02",
     code: "CTR-99",
     title: "CTR 1999",
     subtitle: "Crash Team Racing — Native WebAssembly Kart Port",
@@ -65,10 +99,16 @@ window.GAMES = [
       { keys: "SHIFT", action: "Turbo Boost" },
       { keys: "F2", action: "Rooms & Hub" },
     ],
+    theme: {
+      primary: "#FF5A00",
+      secondary: "#0284C7",
+      ink: "#111214",
+      tint: "rgba(255, 90, 0, 0.09)",
+    },
   },
   {
     id: "gta3",
-    serial: "02",
+    serial: "03",
     code: "GTA-03",
     title: "GTA III",
     subtitle: "Grand Theft Auto III — Liberty Net Co-op Edition",
@@ -93,10 +133,16 @@ window.GAMES = [
       { keys: "MOUSE", action: "Aim & Fire" },
       { keys: "M", action: "Liberty Net Menu" },
     ],
+    theme: {
+      primary: "#E5A00D",
+      secondary: "#0F766E",
+      ink: "#111214",
+      tint: "rgba(229, 160, 13, 0.10)",
+    },
   },
   {
     id: "emerald",
-    serial: "03",
+    serial: "04",
     code: "PKM-EM",
     title: "POKÉMON EMERALD",
     subtitle: "Hoenn Region — Browser GBA & Link Multiplayer",
@@ -121,10 +167,16 @@ window.GAMES = [
       { keys: "ENTER", action: "Start Menu" },
       { keys: "SHIFT", action: "Select" },
     ],
+    theme: {
+      primary: "#059669",
+      secondary: "#DC2626",
+      ink: "#FFFFFF",
+      tint: "rgba(5, 150, 105, 0.09)",
+    },
   },
   {
     id: "metalslug",
-    serial: "04",
+    serial: "05",
     code: "MSL-13",
     title: "METAL SLUG 1–3",
     subtitle: "Neo Geo MVS Anthology — 60FPS Lockstep Co-op",
@@ -149,10 +201,16 @@ window.GAMES = [
       { keys: "COIN", action: "Insert Coin" },
       { keys: "START", action: "Drop-in P1/P2" },
     ],
+    theme: {
+      primary: "#D95D14",
+      secondary: "#4D7C0F",
+      ink: "#FFFFFF",
+      tint: "rgba(217, 93, 20, 0.09)",
+    },
   },
   {
     id: "brotato",
-    serial: "05",
+    serial: "06",
     code: "BRT-23",
     title: "BROTATO",
     subtitle: "Arena Roguelite — Online 4-Player Squad Co-op",
@@ -177,10 +235,16 @@ window.GAMES = [
       { keys: "F2", action: "Rooms & Saves Bar" },
       { keys: "F11", action: "Fullscreen Toggle" },
     ],
+    theme: {
+      primary: "#7C3AED",
+      secondary: "#F59E0B",
+      ink: "#FFFFFF",
+      tint: "rgba(124, 58, 237, 0.09)",
+    },
   },
   {
     id: "tetris",
-    serial: "06",
+    serial: "07",
     code: "TET-84",
     title: "TETRIS",
     subtitle: "Competitive Falling-Block Matrix — Online Versus",
@@ -205,10 +269,16 @@ window.GAMES = [
       { keys: "SPACE", action: "Hard Drop" },
       { keys: "C / SHIFT", action: "Hold Piece" },
     ],
+    theme: {
+      primary: "#0284C7",
+      secondary: "#E11D48",
+      ink: "#FFFFFF",
+      tint: "rgba(2, 132, 199, 0.09)",
+    },
   },
   {
     id: "nfsu2",
-    serial: "07",
+    serial: "08",
     code: "NFS-U2",
     title: "NFS UNDERGROUND 2",
     subtitle: "Bayview Street Racing — x86 → WASM + WebGPU Port",
@@ -233,10 +303,16 @@ window.GAMES = [
       { keys: "SPACE", action: "Handbrake Drift" },
       { keys: "ENTER", action: "Menu / Lobby" },
     ],
+    theme: {
+      primary: "#0891B2",
+      secondary: "#9333EA",
+      ink: "#FFFFFF",
+      tint: "rgba(8, 145, 178, 0.10)",
+    },
   },
   {
     id: "marioparty3",
-    serial: "08",
+    serial: "09",
     code: "MP3-64",
     title: "MARIO PARTY 3 (N64)",
     subtitle: "Millennium Star Board & Minigames — 4P Online N64",
@@ -261,34 +337,12 @@ window.GAMES = [
       { keys: "R / SHIFT", action: "360° Spin / Walk" },
       { keys: "F2", action: "Rooms & Core Bar" },
     ],
-  },
-  {
-    id: "capsa",
-    serial: "09",
-    code: "CPS-13",
-    title: "CAPSA",
-    subtitle: "Big Two / Capsa Banting — 4-Player Online Card Table",
-    url: "https://capsaweb.johansans999.workers.dev/",
-    status: "coming-soon",
-    category: "versus",
-    year: "CLASSIC",
-    players: "2–4P ONLINE",
-    modeLabel: "STAGED // CARD TABLE",
-    engine: "Native Web UI · Deterministic Deck & Combo Engine",
-    network: "Cloudflare Workers + Durable Objects Room Sync",
-    summary:
-      "Browser-native online Capsa (Big Two / Capsa Banting) tabletop engineered for fast 4-player rooms, crisp hand-sorting, combo validation, and real-time turn synchronization. Currently under construction.",
-    highlights: [
-      "Full 52-card deck ruleset with singles, pairs & 5-card combos",
-      "Real-time multiplayer lobbies & invite links over Durable Objects",
-      "Currently under construction — staging for upcoming deployment",
-    ],
-    controls: [
-      { keys: "CLICK", action: "Select Cards" },
-      { keys: "SPACE", action: "Play Hand" },
-      { keys: "P", action: "Pass Turn" },
-      { keys: "S", action: "Sort Hand" },
-    ],
+    theme: {
+      primary: "#EAB308",
+      secondary: "#DC2626",
+      ink: "#111214",
+      tint: "rgba(234, 179, 8, 0.11)",
+    },
   },
   {
     id: "monopoly",
@@ -297,19 +351,19 @@ window.GAMES = [
     title: "MONOPOLY",
     subtitle: "Classic Property Trading Board — Online Multiplayer",
     url: "https://capsaweb.johansans999.workers.dev/",
-    status: "coming-soon",
+    status: "live",
     category: "versus",
     year: "1935",
     players: "2–6P ONLINE",
-    modeLabel: "STAGED // BOARD GAME",
+    modeLabel: "VERSUS // BOARD GAME",
     engine: "Native Browser Canvas / Interactive Tabletop Runtime",
     network: "Cloudflare Workers + Durable Objects State Relay",
     summary:
-      "Online browser Monopoly featuring real-time turn sync, property auctions, player-to-player trading, Chance & Community Chest decks, and house/hotel upgrades. Currently under construction.",
+      "Online browser Monopoly featuring real-time turn sync, property auctions, player-to-player trading, Chance & Community Chest decks, and house/hotel upgrades directly in your browser.",
     highlights: [
       "Turn-synchronized multiplayer board, trades & live auctions",
       "Persistent room state powered by Cloudflare Durable Objects",
-      "Currently under construction — staging for upcoming deployment",
+      "Zero-install instant tabletop lobbies with shareable links",
     ],
     controls: [
       { keys: "SPACE", action: "Roll Dice" },
@@ -317,5 +371,11 @@ window.GAMES = [
       { keys: "T", action: "Trade Proposal" },
       { keys: "E", action: "End Turn" },
     ],
+    theme: {
+      primary: "#0D9488",
+      secondary: "#DC2626",
+      ink: "#FFFFFF",
+      tint: "rgba(13, 148, 136, 0.10)",
+    },
   },
 ];
