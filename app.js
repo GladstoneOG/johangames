@@ -526,7 +526,7 @@
                 <span class="launch-cta-arrow">LOCKED ⊘</span>
               </button>
               <p class="staged-note">
-                UNIT ${escapeHtml(game.serial)} (${escapeHtml(game.code)}) is currently under active WebGPU / multiplayer compilation. Flip <code>status: "live"</code> in <code>games.js</code> once ready.
+                UNIT ${escapeHtml(game.serial)} (${escapeHtml(game.code)}) is currently under construction &amp; multiplayer staging. Flip <code>status: "live"</code> in <code>games.js</code> once ready.
               </p>
             `
             : `

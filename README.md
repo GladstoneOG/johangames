@@ -13,6 +13,11 @@ A zero-build, Swiss Print × Futuristic-Industrial (Arknights: Endfield–inspir
 7. **NFS Underground 2** — https://nfsu2web.johansans999.workers.dev/
 8. **Mario Party 3 (N64)** — https://marioparty3web.johansans999.workers.dev/
 
+## Under Construction (Staged)
+
+9. **Capsa** — https://capsaweb.johansans999.workers.dev/
+10. **Monopoly** — https://capsaweb.johansans999.workers.dev/
+
 ## Files
 
 - `index.html` — Semantic layout shell, dynamic SVG favicon, and Swiss typography
@@ -29,13 +34,13 @@ Open `games.js` and append a new object to `window.GAMES`. Metrics, filter count
 ## Deploying (Zero Build Step)
 
 ### Cloudflare Pages
-- Connect `https://github.com/GladstoneOG/games` with **Build command:** *(empty)* and **Output directory:** `/` (root), or run:
+- Connect `https://github.com/GladstoneOG/johangames` with **Build command:** *(empty)* and **Output directory:** `/` (root), or run:
   ```bash
-  npx wrangler pages deploy . --project-name games
+  npx wrangler pages deploy . --project-name johangames
   ```
 
 ### Vercel
-- Import `https://github.com/GladstoneOG/games` (leave Build Command empty, Output Directory `.`), or run:
+- Import `https://github.com/GladstoneOG/johangames` (leave Build Command empty, Output Directory `.`), or run:
   ```bash
   npx vercel --prod
   ```

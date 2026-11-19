@@ -415,6 +415,105 @@ window.GAME_SCHEMATICS = {
     </svg>
   `,
 
+  capsa: () => `
+    <svg viewBox="0 0 360 150" fill="none" xmlns="http://www.w3.org/2000/svg" class="schematic-svg" aria-hidden="true">
+      <defs>
+        <pattern id="grid-cps" width="18" height="18" patternUnits="userSpaceOnUse">
+          <path d="M 18 0 L 0 0 0 18" stroke="currentColor" stroke-opacity="0.09" stroke-width="0.7"/>
+        </pattern>
+      </defs>
+      <rect width="360" height="150" fill="url(#grid-cps)"/>
+      <!-- Fanned Precision Playing Cards CAD Blueprint -->
+      <g transform="translate(132, 78)" stroke="currentColor" stroke-width="1.6">
+        <g transform="rotate(-22) translate(-34, -44)">
+          <rect x="0" y="0" width="54" height="78" fill="#F8F8F5"/>
+          <text x="7" y="16" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800" fill="currentColor" stroke="none">K</text>
+          <polygon points="27,28 36,40 27,52 18,40" fill="none" stroke-width="1.5"/>
+        </g>
+        <g transform="rotate(-7) translate(-24, -48)">
+          <rect x="0" y="0" width="54" height="78" fill="#F8F8F5"/>
+          <text x="7" y="16" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800" fill="currentColor" stroke="none">A</text>
+          <polygon points="27,27 37,41 27,55 17,41" fill="#FFE600" stroke-width="1.5"/>
+        </g>
+        <g transform="rotate(10) translate(-12, -46)">
+          <rect x="0" y="0" width="54" height="78" fill="#FFE600"/>
+          <rect x="4" y="4" width="46" height="70" fill="none" stroke-dasharray="3 2" stroke-width="0.9"/>
+          <text x="8" y="18" font-family="JetBrains Mono, monospace" font-size="12" font-weight="800" fill="currentColor" stroke="none">2♠</text>
+          <path d="M 27 30 C 37 42, 39 50, 27 49 C 15 50, 17 42, 27 30 Z" fill="currentColor" stroke="none"/>
+          <polygon points="27,46 31,56 23,56" fill="currentColor" stroke="none"/>
+        </g>
+      </g>
+      <!-- Suit Priority Vector Diagram -->
+      <g transform="translate(242, 30)" stroke="currentColor" stroke-width="1.3">
+        <rect x="0" y="0" width="94" height="82" fill="#F8F8F5"/>
+        <line x1="0" y1="20" x2="94" y2="20"/>
+        <text x="8" y="13" font-family="JetBrains Mono, monospace" font-size="7.5" font-weight="700" fill="currentColor" stroke="none">RANK // BIG TWO</text>
+        <text x="10" y="38" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="currentColor" stroke="none">♠ &gt; ♥ &gt; ♣ &gt; ♦</text>
+        <line x1="10" y1="48" x2="84" y2="48" stroke-dasharray="3 2" opacity="0.5"/>
+        <text x="10" y="64" font-family="JetBrains Mono, monospace" font-size="8" fill="currentColor" stroke="none">DECK: 52 / 4P</text>
+        <text x="10" y="75" font-family="JetBrains Mono, monospace" font-size="7.5" fill="currentColor" stroke="none" opacity="0.72">HAND: 13 CARDS</text>
+      </g>
+      <text x="18" y="18" font-family="JetBrains Mono, monospace" font-size="8" fill="currentColor" opacity="0.72">TABLETOP // CAPSA BANTING</text>
+      <text x="18" y="138" font-family="JetBrains Mono, monospace" font-size="8" fill="currentColor" opacity="0.72">BUILD // UNDER CONSTRUCTION</text>
+    </svg>
+  `,
+
+  monopoly: () => `
+    <svg viewBox="0 0 360 150" fill="none" xmlns="http://www.w3.org/2000/svg" class="schematic-svg" aria-hidden="true">
+      <defs>
+        <pattern id="grid-mnp" width="16" height="16" patternUnits="userSpaceOnUse">
+          <path d="M 16 0 L 0 0 0 16" stroke="currentColor" stroke-opacity="0.09" stroke-width="0.7"/>
+        </pattern>
+      </defs>
+      <rect width="360" height="150" fill="url(#grid-mnp)"/>
+      <!-- Board Corner Perimeter Grid -->
+      <g transform="translate(30, 26)" stroke="currentColor" stroke-width="1.5">
+        <rect x="0" y="0" width="154" height="94" fill="#F8F8F5"/>
+        <!-- Corner GO Cell -->
+        <rect x="0" y="56" width="38" height="38" fill="#FFE600"/>
+        <text x="7" y="79" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800" fill="currentColor" stroke="none">GO↗</text>
+        <!-- Property Spaces Along Bottom & Left -->
+        <rect x="38" y="56" width="29" height="38" fill="#F8F8F5"/>
+        <rect x="38" y="56" width="29" height="9" fill="currentColor"/>
+        <rect x="67" y="56" width="29" height="38" fill="#F8F8F5"/>
+        <rect x="67" y="56" width="29" height="9" fill="#FFE600"/>
+        <rect x="96" y="56" width="29" height="38" fill="#F8F8F5"/>
+        <rect x="96" y="56" width="29" height="9" fill="currentColor"/>
+        <rect x="125" y="56" width="29" height="38" fill="#F8F8F5"/>
+        <rect x="125" y="56" width="29" height="9" fill="#FFE600"/>
+        <!-- Left Rail Spaces -->
+        <rect x="0" y="28" width="38" height="28" fill="#F8F8F5"/>
+        <rect x="30" y="28" width="8" height="28" fill="currentColor"/>
+        <rect x="0" y="0" width="38" height="28" fill="#F8F8F5"/>
+        <rect x="30" y="0" width="8" height="28" fill="#FFE600"/>
+        <!-- Center Title Deed Blueprint Box -->
+        <rect x="52" y="10" width="88" height="34" fill="none" stroke-dasharray="3 2" stroke-width="1.1"/>
+        <text x="64" y="25" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" fill="currentColor" stroke="none">TITLE DEED</text>
+        <text x="64" y="37" font-family="JetBrains Mono, monospace" font-size="7.5" fill="currentColor" stroke="none" opacity="0.72">$200 PASS GO</text>
+      </g>
+      <!-- Geometric House / Hotel Wireframe + Twin Dice -->
+      <g transform="translate(214, 34)" stroke="currentColor" stroke-width="1.6">
+        <!-- Hotel Icon -->
+        <polygon points="24,14 48,0 72,14 72,48 24,48" fill="#F8F8F5"/>
+        <rect x="34" y="22" width="10" height="10" fill="#FFE600"/>
+        <rect x="52" y="22" width="10" height="10" fill="#FFE600"/>
+        <rect x="43" y="36" width="10" height="12" fill="currentColor"/>
+        <!-- Twin Dice -->
+        <rect x="8" y="60" width="24" height="24" fill="#FFE600"/>
+        <circle cx="15" cy="67" r="2" fill="currentColor" stroke="none"/>
+        <circle cx="25" cy="77" r="2" fill="currentColor" stroke="none"/>
+        <rect x="42" y="60" width="24" height="24" fill="#F8F8F5"/>
+        <circle cx="49" cy="67" r="2" fill="currentColor" stroke="none"/>
+        <circle cx="54" cy="72" r="2" fill="currentColor" stroke="none"/>
+        <circle cx="59" cy="77" r="2" fill="currentColor" stroke="none"/>
+        <rect x="76" y="60" width="44" height="24" fill="#F8F8F5" stroke-width="1.2"/>
+        <text x="82" y="75" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" fill="currentColor" stroke="none">2D6</text>
+      </g>
+      <text x="18" y="18" font-family="JetBrains Mono, monospace" font-size="8" fill="currentColor" opacity="0.72">BOARD // PROPERTY TRADING</text>
+      <text x="198" y="138" font-family="JetBrains Mono, monospace" font-size="8" fill="currentColor" opacity="0.72">BUILD // UNDER CONSTRUCTION</text>
+    </svg>
+  `,
+
   fallback: (game) => `
     <svg viewBox="0 0 360 150" fill="none" xmlns="http://www.w3.org/2000/svg" class="schematic-svg" aria-hidden="true">
       <defs>
