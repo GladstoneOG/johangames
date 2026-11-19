@@ -75,6 +75,11 @@
     const elRailStatus = document.getElementById("railStatusCount");
     const elMetricLive = document.getElementById("metricLive");
     const elMetricStaged = document.getElementById("metricStaged");
+    const elIndexRange = document.getElementById("mastheadIndexRange");
+
+    if (elIndexRange) {
+      elIndexRange.textContent = `INDEX 01–${pad2(games.length)}`;
+    }
 
     if (elBrand && meta.brand) {
       elBrand.textContent = meta.brand;

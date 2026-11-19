@@ -234,4 +234,32 @@ window.GAMES = [
       { keys: "ENTER", action: "Menu / Lobby" },
     ],
   },
+  {
+    id: "marioparty3",
+    serial: "08",
+    code: "MP3-64",
+    title: "MARIO PARTY 3 (N64)",
+    subtitle: "Millennium Star Board & Minigames — 4P Online N64",
+    url: "https://marioparty3web.johansans999.workers.dev/",
+    status: "live",
+    category: "versus",
+    year: "2000",
+    players: "1–4P ONLINE",
+    modeLabel: "VERSUS // N64 PARTY",
+    engine: "Mupen64Plus-Next / ParaLLEl N64 WASM · WebGL2",
+    network: "Star-Topology Lockstep WebRTC P2P + CF DO Relay",
+    summary:
+      "Zero-install Nintendo 64 browser port of Mario Party 3 (USA) with 1–4 player star-topology lockstep multiplayer, hot-join live N64 hardware savestate streaming, and plug-and-play controller support.",
+    highlights: [
+      "Direct WebRTC P2P + CGNAT-proof Durable Object fallback",
+      "Hot-join N64 state sync & 1-click invite links (?room=)",
+      "Plug-and-play gamepads, 360° Spin Assist (R) & EEPROM saves",
+    ],
+    controls: [
+      { keys: "WASD", action: "Analog Stick" },
+      { keys: "J / K / L", action: "A / B / Z Trigger" },
+      { keys: "R / SHIFT", action: "360° Spin / Walk" },
+      { keys: "F2", action: "Rooms & Core Bar" },
+    ],
+  },
 ];

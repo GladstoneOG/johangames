@@ -11,6 +11,7 @@ A zero-build, Swiss Print × Futuristic-Industrial (Arknights: Endfield–inspir
 5. **Brotato** — https://brotatoweb.johansans999.workers.dev/
 6. **Tetris** — https://tetrisweb.johansans999.workers.dev/
 7. **NFS Underground 2** — https://nfsu2web.johansans999.workers.dev/
+8. **Mario Party 3 (N64)** — https://marioparty3web.johansans999.workers.dev/
 
 ## Files
 

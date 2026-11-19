@@ -354,6 +354,67 @@ window.GAME_SCHEMATICS = {
     </svg>
   `,
 
+  marioparty3: () => `
+    <svg viewBox="0 0 360 150" fill="none" xmlns="http://www.w3.org/2000/svg" class="schematic-svg" aria-hidden="true">
+      <defs>
+        <pattern id="grid-mp3" width="18" height="18" patternUnits="userSpaceOnUse">
+          <path d="M 18 0 L 0 0 0 18" stroke="currentColor" stroke-opacity="0.09" stroke-width="0.7"/>
+        </pattern>
+      </defs>
+      <rect width="360" height="150" fill="url(#grid-mp3)"/>
+      <!-- Board Space Path Spline & Nodes -->
+      <path d="M 28 112 C 62 112, 74 96, 110 96 C 148 96, 166 116, 206 112 C 244 108, 258 84, 294 84 L 332 84"
+            stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.55"/>
+      <g stroke="currentColor" stroke-width="1.5">
+        <circle cx="42" cy="111" r="6" fill="#F8F8F5"/>
+        <circle cx="78" cy="102" r="6" fill="#F8F8F5"/>
+        <circle cx="116" cy="96" r="6" fill="#FFE600"/>
+        <circle cx="158" cy="106" r="6" fill="#F8F8F5"/>
+        <circle cx="204" cy="112" r="6" fill="#111214"/>
+        <circle cx="250" cy="96" r="6" fill="#F8F8F5"/>
+        <circle cx="294" cy="84" r="8" fill="#FFE600"/>
+      </g>
+      <!-- Isometric Dice Block CAD Wireframe -->
+      <g transform="translate(106, 54)" stroke="currentColor" stroke-width="1.7">
+        <!-- Outer isometric cube -->
+        <polygon points="0,-28 28,-14 28,16 0,30 -28,16 -28,-14" fill="#F8F8F5"/>
+        <polygon points="0,-28 28,-14 0,0 -28,-14" fill="#FFE600"/>
+        <line x1="0" y1="0" x2="0" y2="30"/>
+        <!-- Face Digits -->
+        <text x="-6" y="-10" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="800" fill="currentColor" stroke="none">10</text>
+        <text x="-18" y="14" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="currentColor" stroke="none">6</text>
+        <text x="10" y="14" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" fill="currentColor" stroke="none">3</text>
+        <!-- Orbiting projection bracket -->
+        <path d="M -38 -18 L -38 -26 L -30 -26" stroke-width="1.2" opacity="0.65"/>
+        <path d="M 38 -18 L 38 -26 L 30 -26" stroke-width="1.2" opacity="0.65"/>
+      </g>
+      <!-- Millennium Star Technical Wireframe -->
+      <g transform="translate(248, 52)">
+        <circle cx="0" cy="0" r="32" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.45"/>
+        <polygon points="0,-26 7,-8 26,-8 11,4 16,22 0,11 -16,22 -11,4 -26,-8 -7,-8"
+                 fill="#FFE600" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter"/>
+        <circle cx="-4" cy="-2" r="1.8" fill="currentColor"/>
+        <circle cx="4" cy="-2" r="1.8" fill="currentColor"/>
+        <!-- Star center registration lines -->
+        <line x1="-40" y1="0" x2="-28" y2="0" stroke="currentColor" stroke-width="1"/>
+        <line x1="28" y1="0" x2="40" y2="0" stroke="currentColor" stroke-width="1"/>
+      </g>
+      <!-- 4P Controller Slot Indicators -->
+      <g transform="translate(18, 12)">
+        <rect x="0" y="0" width="18" height="13" fill="currentColor"/>
+        <text x="3.5" y="9.5" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#FFE600" font-weight="700">P1</text>
+        <rect x="22" y="0" width="18" height="13" fill="currentColor"/>
+        <text x="25.5" y="9.5" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#FFE600" font-weight="700">P2</text>
+        <rect x="44" y="0" width="18" height="13" fill="currentColor"/>
+        <text x="47.5" y="9.5" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#FFE600" font-weight="700">P3</text>
+        <rect x="66" y="0" width="18" height="13" fill="currentColor"/>
+        <text x="69.5" y="9.5" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#FFE600" font-weight="700">P4</text>
+      </g>
+      <text x="18" y="138" font-family="JetBrains Mono, monospace" font-size="8" fill="currentColor" opacity="0.72">N64 // 4P STAR LOCKSTEP</text>
+      <text x="226" y="138" font-family="JetBrains Mono, monospace" font-size="8" fill="currentColor" opacity="0.72">MUPEN64 [WEBGL2]</text>
+    </svg>
+  `,
+
   fallback: (game) => `
     <svg viewBox="0 0 360 150" fill="none" xmlns="http://www.w3.org/2000/svg" class="schematic-svg" aria-hidden="true">
       <defs>
