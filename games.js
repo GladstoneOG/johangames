@@ -350,7 +350,7 @@ window.GAMES = [
     code: "MNP-35",
     title: "MONOPOLY",
     subtitle: "Classic Property Trading Board — Online Multiplayer",
-    url: "https://capsaweb.johansans999.workers.dev/",
+    url: "https://monopolyweb.johansans999.workers.dev/",
     status: "live",
     category: "versus",
     year: "1935",
