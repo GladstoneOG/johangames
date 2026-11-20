@@ -199,7 +199,7 @@
       scrambleTo(elBrandMark, nextIcon, 320);
       if (elFooter) scrambleTo(elFooter, nextFooter, 380);
 
-      document.title = `${nextBrand} // WebAssembly Multiplayer Game Archive`;
+      document.title = `${nextBrand} // Multiplayer Web Games Archive`;
       updateFavicon(nextIcon);
     }
 

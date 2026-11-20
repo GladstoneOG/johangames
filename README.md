@@ -1,6 +1,6 @@
-# GLADSTONEOG // WebAssembly Multiplayer Game Portal
+# GLADSTONEOG // Multiplayer Web Games Portal
 
-A zero-build, Swiss Print × Futuristic-Industrial (Arknights: Endfield–inspired) static portal for browser-ported multiplayer games by **GladstoneOG / Johansans999**.
+A zero-build, Swiss Print × Futuristic-Industrial (Arknights: Endfield–inspired) static portal for original browser multiplayer games and WebAssembly ports by **GladstoneOG / Johansans999**.
 
 ## Live Games
 

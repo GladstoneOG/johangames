@@ -34,7 +34,7 @@ window.PORTAL_META = {
   version: "SYS.2.7",
   node: "WORKERS.DEV",
   tagline:
-    "Classic & indie titles compiled to WebAssembly and engineered with zero-install browser multiplayer over WebRTC P2P & Cloudflare Durable Objects.",
+    "Original browser multiplayer games and classic WebAssembly ports — zero-install online play over WebRTC P2P & Cloudflare Durable Objects.",
 };
 
 window.GAMES = [
