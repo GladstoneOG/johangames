@@ -32,16 +32,16 @@ window.GAME_SCHEMATICS = {
           <text x="7" y="16" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800" fill="#DC2626" stroke="none">K♥</text>
           <path d="M 27 48 C 14 38, 16 28, 23 28 C 26 28, 27 31, 27 31 C 27 31, 28 28, 31 28 C 38 28, 40 38, 27 48 Z" fill="#DC2626" stroke="none"/>
         </g>
-        <!-- Ace of Diamonds (Crimson + Gold) -->
+        <!-- Ace of Diamonds (Crimson) -->
         <g transform="rotate(-7) translate(-24, -48)">
-          <rect x="0" y="0" width="54" height="78" fill="#FFFBEB"/>
+          <rect x="0" y="0" width="54" height="78" fill="#FFFFFF"/>
           <text x="7" y="16" font-family="JetBrains Mono, monospace" font-size="11" font-weight="800" fill="#D92626" stroke="none">A♦</text>
           <polygon points="27,26 38,41 27,56 16,41" fill="#EF4444" stroke="#111214" stroke-width="1.4"/>
         </g>
-        <!-- 2 of Spades (Highest Card - Gold & Obsidian) -->
+        <!-- 2 of Spades (Highest Card - Crisp White & Obsidian) -->
         <g transform="rotate(10) translate(-12, -46)">
-          <rect x="0" y="0" width="54" height="78" fill="#FACC15"/>
-          <rect x="4" y="4" width="46" height="70" fill="none" stroke="#111214" stroke-dasharray="3 2" stroke-width="0.9"/>
+          <rect x="0" y="0" width="54" height="78" fill="#FFFFFF"/>
+          <rect x="4" y="4" width="46" height="70" fill="none" stroke="#111214" stroke-opacity="0.35" stroke-dasharray="3 2" stroke-width="0.9"/>
           <text x="8" y="18" font-family="JetBrains Mono, monospace" font-size="12" font-weight="800" fill="#111214" stroke="none">2♠</text>
           <path d="M 27 30 C 37 42, 39 50, 27 49 C 15 50, 17 42, 27 30 Z" fill="#111214" stroke="none"/>
           <polygon points="27,46 31,56 23,56" fill="#111214" stroke="none"/>
@@ -236,12 +236,15 @@ window.GAME_SCHEMATICS = {
       <rect width="360" height="150" fill="url(#grid-msl-${s})"/>
       <!-- SV-001 Tank Orthographic Blueprint -->
       <g transform="translate(52, 42)" stroke="#111214" stroke-width="1.7">
-        <!-- Main Cannon Barrel -->
-        <rect x="86" y="16" width="54" height="10" fill="#EA580C"/>
-        <rect x="136" y="13" width="10" height="16" fill="#111214"/>
+        <!-- Main Cannon Barrel (seated solidly into turret dome) -->
+        <rect x="76" y="19" width="62" height="9" fill="#EA580C"/>
+        <rect x="135" y="16" width="11" height="15" fill="#111214"/>
+        <!-- Commander Hatch (seated flush onto turret dome) -->
+        <rect x="47" y="10" width="22" height="9" fill="#3F6212"/>
         <!-- Turret Dome -->
         <path d="M 32 34 C 32 10, 88 10, 92 34 Z" fill="#A3B18A"/>
-        <rect x="44" y="6" width="22" height="7" fill="#3F6212"/>
+        <!-- Gun Mantlet Collar -->
+        <rect x="83" y="17" width="8" height="13" rx="2" fill="#3F6212"/>
         <!-- Armored Chassis -->
         <path d="M 16 34 L 106 34 L 116 54 L 10 54 Z" fill="#C7D1B3"/>
         <rect x="28" y="40" width="14" height="8" fill="#FACC15"/>
@@ -255,7 +258,7 @@ window.GAME_SCHEMATICS = {
         <circle cx="106" cy="66" r="6" fill="#EA580C"/>
       </g>
       <!-- Ballistic Shell Trajectory + Crimson Crosshair -->
-      <path d="M 204 62 Q 254 28 302 74" stroke="#EA580C" stroke-width="1.8" stroke-dasharray="4 3"/>
+      <path d="M 202 65 Q 254 28 302 74" stroke="#EA580C" stroke-width="1.8" stroke-dasharray="4 3"/>
       <g transform="translate(304, 76)">
         <circle cx="0" cy="0" r="20" stroke="#DC2626" stroke-width="1.6"/>
         <circle cx="0" cy="0" r="9" fill="#F97316" stroke="#111214" stroke-width="1.3"/>
@@ -419,9 +422,11 @@ window.GAME_SCHEMATICS = {
       <rect width="360" height="150" fill="url(#grid-nfs-${s})"/>
       <!-- Bayview Street Tuner Coupe -->
       <g transform="translate(26, 46)" stroke="#111214" stroke-width="1.8">
-        <!-- Rear GT Wing -->
-        <path d="M 14 26 L 22 10 L 34 10 L 30 26" fill="none"/>
-        <line x1="10" y1="10" x2="38" y2="10" stroke="#9333EA" stroke-width="2.6"/>
+        <!-- Rear-Swept GT Wing (angled back & mounted flush to rear deck) -->
+        <line x1="25" y1="31" x2="18" y2="12" stroke="#111214" stroke-width="2"/>
+        <line x1="36" y1="29" x2="29" y2="13" stroke="#111214" stroke-width="2"/>
+        <polygon points="10,9 35,13 34,16 11,13" fill="#9333EA" stroke="#111214" stroke-width="1.3"/>
+        <line x1="10" y1="7" x2="12" y2="16" stroke="#9333EA" stroke-width="2.2"/>
         <!-- Body Silhouette (Nitrous Cyan) -->
         <path d="M 22 50 L 18 32 L 42 26 L 78 10 L 138 10 L 178 28 L 224 34 L 234 48 L 226 54 L 22 54 Z" fill="#06B6D4"/>
         <!-- Tinted Cabin Window -->
